@@ -14,12 +14,20 @@ GravityMaterieSimulator16122021.zip:
 After you have tested the jar file as a demo, you can use my java code, familiarize yourself with it and experiment with the various simulations that I have already implemented.
 
 
-
+Mandelbrotmenge.zip: 
+Java code for generating images from the Mandelbrot set. This code was the basis for a good friend of mine's application video for Sound and Music Production.
 
 
 Linked Videos:
-https://www.youtube.com/user/Andreas5564/videos
+https://www.youtube.com/user/Andreas5564/videos   
 https://www.instagram.com/p/CYZe_MVhocT/
+
+
+What I also find very interesting and would like to implement:
+The strategic board game Go:
+Automatically breakpoints into puzzle:
+https://forums.online-go.com/t/automatically-breakpoints-into-puzzle/38879   
+https://www.instagram.com/p/CWKmtlKsI3K/
 
 
 Best Regards
