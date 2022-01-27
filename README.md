@@ -17,10 +17,24 @@ After you have tested the jar file as a demo, you can use my java code, familiar
 Mandelbrotmenge.zip: 
 Java code for generating images from the Mandelbrot set. This code was the basis for a good friend of mine's application video for Sound and Music Production.
 
+Speedpow.zip: I asked myself why the default division of two integers in many programming languages, contrary to any mathematical convention,
+returns an integer and no float or double or only an integer if the modulo value in a case distinction is 0 ...
+The way I see it, it can only be due to the existence of an algorithm
+On the one hand: it has to be very good
+On the other hand, it was not adaptable or must have been based on the fact that the primitive integer division incorrectly returns
+an integer and simply cuts off the fractional part as long as you do not change either the dividend or divisor to a number type with decimal places. Example: Instead of 3/5 = 0
+3.0 / 5 = 0.6
+Perhaps it was due to the algorithm for multiplication and exponentiation with logarithmic speed.
+
+What do you think about? Did you know the problem? Or did you not think about it at all? If so, please bring these thoughts
+to other computer scientists ...
+
+
 
 Linked Videos:
 https://www.youtube.com/user/Andreas5564/videos   
 https://www.instagram.com/p/CYZe_MVhocT/
+https://www.instagram.com/p/CV81nm1phQb/
 
 
 What I also find very interesting and would like to implement:
