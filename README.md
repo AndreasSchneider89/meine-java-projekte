@@ -33,7 +33,7 @@ to other computer scientists ...
 
 Linked Videos:
 https://www.youtube.com/user/Andreas5564/videos   
-https://www.instagram.com/p/CYZe_MVhocT/
+https://www.instagram.com/p/CYZe_MVhocT/   
 https://www.instagram.com/p/CV81nm1phQb/
 
 
