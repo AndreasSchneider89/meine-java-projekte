@@ -29,6 +29,10 @@ Perhaps it was due to the algorithm for multiplication and exponentiation with l
 What do you think about? Did you know the problem? Or did you not think about it at all? If so, please bring these thoughts
 to other computer scientists ...
 
+VierD10.zip: My goal is to learn java game development by parallel programming the youtube tutorial series:
+https://www.youtube.com/watch?v=2IdgIMNIWpE&list=PL-buEZyaAaNizo7vQ9B4JHjAwQfqyW5GN
+and at the end something completely new; a game in which there are not only 2 or 3 but 4 spatial dimensions.
+
 
 
 Linked Videos:
