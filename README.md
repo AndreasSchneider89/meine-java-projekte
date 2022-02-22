@@ -12,6 +12,7 @@ You generate the space-time by repeated clicking. Does the interaction between t
 
 GravityMaterieSimulator16122021.zip:
 After you have tested the jar file as a demo, you can use my java code, familiarize yourself with it and experiment with the various simulations that I have already implemented.
+At first you can download and add the ACM Java library and run the class MassekugelnReloaded4.
 
 
 Mandelbrotmenge.zip: 
