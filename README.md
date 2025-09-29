@@ -41,6 +41,9 @@ https://www.youtube.com/user/Andreas5564/videos
 https://www.instagram.com/p/CYZe_MVhocT/   
 https://www.instagram.com/p/CV81nm1phQb/
 
+Link to my Matrixgame-Journal / Fragment des Übergangs 5 with all linked open source Visions and thoughts of mine and my collectiv Matrixgame:
+https://docs.google.com/document/d/1J_qc7-O3qbUb8WOyBHNnLkcEEQ5JklY4d9vmd67RtC4/edit?tab=t.0#heading=h.z5iq1svjrbd0
+
 
 What I also find very interesting and would like to implement:
 The strategic board game Go:
