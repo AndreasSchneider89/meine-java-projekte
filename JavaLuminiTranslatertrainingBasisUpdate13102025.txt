@@ -1,0 +1,1062 @@
+package lumini;
+
+import java.util.*;
+
+import acm.program.DialogProgram;
+
+public class LuminiTranslateTrainingBasis {
+
+	/**
+	public class LuminiTranslateTrainingBasis  {
+	
+	 * If you don't understand german you can use AI like Gemini, ChatGPT, Qwen, Grok, DeepSeek, MistralAI, ... to translate in all languages :)
+	 * Morse und eine kollektive selbst erschaffene und entwickelbare Sprache (Möglicher Name deiner neuen Sprache: Lumini) lernen mit schöner Didaktik, Gamifizierung, OpenSource und dem Potential für gerenzenlose Vielfalt und Weiterentwicklung.
+	 * Der Code könnte noch Fehler enthalten, die du mir gerne als Nachricht schreiben oder mit oder ohne mir verbessern kannst. Ich würde das Programm einfach ein Par Mal
+	 * mit einer IDE wie InteliJ oder in meinem Fall eclipse ausführen Eclipse. Strg+c und alles (den ganzen Text) in eine Java Klasse. Wird durch source-> Format wieder schön in Eclipse und dann ein par mal Testen 
+	 * und an den Variablen unter Steuerzentrale rum spielen und KIs wie ChatGPT, Gemini, Qwen, Grok, DeepSeek, Claude, ... Fragen in welcher Art und Weise somit Texte Codiert und dekodiert werden können.
+	 * Wenn dich das begeistern konnte ist mit meinem Matrixgame-Journal noch viel mehr zu Lumini und anderen Visionen und Projekten von mir verlinkt und hoffentlich nicht durch eine Browserwarnung bolckiert (Das sind nämlich Dokumente auf den Google Servern, die sicher sind so lange meine Texte dich jetzt nicht doch inspieriert haben etwas unsicheres zu tun, was in gewisser Hinsicht nicht unwahrscheinlich wäre also frag da besser noch genauer nach bevor du Kontodaten veröffentlichst. Let's Go)
+	 * Created on 13.10.2025
+	 * @author Andreas Schneider from Weingartenstraße 45, 64297, Darmstadt-Eberstadt, Germany; Handynumber: +491779627094; E-Mail: andreas.schneider01989@gmail.com
+	 * Warnung von Gemini: Du veröffentlichst sensible Daten, dies stellt ein extrem hohes Sicherheits- und Datenschutzrisiko dar (Doxing, Spam, unerwünschte Kontaktaufnahme).
+	 * Meine Antwort: Ich vermute das das n Fache Enigma von Instagram gehackt wurde. Es existierte nicht nur ein geheimer den man anklicken konnte und dann wurden
+	 * Nutzername und Passwort gehackt sondern auch eine geheime Whatsapp Nachricht um die absolute Sicherheit zu vernichten und eine Geheime Insta Nachricht wo dann das Passwort beim anderen ankommt
+	 * Ich kann nur spekulieren, dass jemand basierend auf dem nerfigen Chaoscode in Form von x-Fachem Enigma, diesen Entschlüsselt hat und den schöneren Code dann allgemein Zugänglich gemacht hat
+	 * Ich habe jetzt einen weiteren Account zum Posten und bei meinem alten Account existieren auch zum Glück noch alle Posts. Es ist also nicht schlimm, dass der Account gehackt
+	 * werden konnte und jetzt fälschlicherweise in meinem Namen behaupten kann, er habe gerade Geld mit dem Bitcoinhandel gemacht obwohl gerade niemand den Bucketsort oder so was geknackt hat. Ich kann hier leider auch nur spekulieren und wüsste gerne mehr...
+	 * Leider zeigt die Instagramsuche seit einiger Zeit nur noch die Top-Beiträge. Das ist sehr sehr schlecht, weil meine Beiträge so nicht mehr existieren und Insta für mich bedeutungslos geworden ist
+	 * Da nutze ich dann lieber Google Docs und YouTube um Sachen von mir zu posten und selber zu verlinken.
+	 * Hier ist der Link zu meinem Matrixgame-Journal: https://docs.google.com/document/d/1J_qc7-O3qbUb8WOyBHNnLkcEEQ5JklY4d9vmd67RtC4/edit?tab=t.0#heading=h.z5iq1svjrbd0
+	 * Hier mein altes Insta: https://www.instagram.com/xxandreas_schneiderx89/
+	 * Mein Perso: https://docs.google.com/document/d/1Rh168H76fW9idQqCZM6FBjM8sg9IybCbncfx8wQB8fY/edit?usp=sharing
+	 * Meine IBAN: DE52 5085 0150 0122 0323 88                       Da kannst du was drauf zahlen und oder abheben. Wenn du was abhebst und ich das merke, dann wird das ebenfalls offen gelegt aber viel ist da leider aktuell nicht zu holen
+	 * Aktien von mir kaufen kann man leider auch noch nicht aber ich rate zum Kauf von Google Aktien, wegen denn ganzen kostenlosen Apps im Playstore, der Entwicklungsumgebung die Pythoncode im Browser ausführt (Colab), Dem Sprachmodell mit schöner Vorlesefunktion, ... Alles kostenlos und ich darf meinen Content veröffentlichen und verlinke und um spenden bitte und forschungshypothesen ohne perreview posten, ... Ohne das es gelöscht wird.
+	 * Ich hoffe weiterhin sehr sehr stark auf konstruktives Feedback, Eine gute Arbeit und vor allem mehr Geld und noch mehr darauf, mit anderen Menschen zusammen an meinen Visionen zu Arbeiten in Form
+	 * eines kollektiven KI Games wo wir dann gemeinsam in den Chats der Sprachmodelle, die von der Googlesuche dann auch gefunden und schön priorisiert werden sollten gemeinsam KI Games spielen.
+	 * Link:https://docs.google.com/document/d/1GW-3iFKuoYJylxpjpec_AADUjzFZU2Bqs9rKfMkwDF0/edit?tab=t.0
+	 * Über eine Zeitnahe Rückmeldung wäre ich sehr dankbar
+	 * Mit besten Grüßen aus dem Matrixgame
+	 * Andreas Schneider @Andreas5564 Heiliges Hirn in YouTube suchen
+	 * ...
+	 * 
+	 * 
+	 * 
+	 * To Do: Hash Map testen und das gelogene ? super schrott was der Compiler sonst nicht ausführt vielleicht weil windows Mellenium zum Mellenium einen Stackoverflow hatte und auf Grund des Chaoscodes nicht open source Debuggt werden konnte oder wegem sonst was aber da ist was das ist kompliziert und dann auch noch falsch. Genau wie die Basis Inegerdivision oder Bibliotheken von Methodensammlungen wo man nicht reinschauen kann und das schöne Skalenniveau zerstört wurde weil 0ms auf 1ms gesetzt wurde damit das Canivis nicht flackern kann... Das Problem ist einfach, dass es nicht individuell anpassbar bzw. open source ist
+	 */
+	 
+
+	static Map<Character, String> LetterToLumini = new HashMap<>();
+	static Map<String, Character> LuminiToLetter = new HashMap<>();
+
+	
+	
+	// Steuerzentrale
+	static String[] LuminiStrings = new String[256];
+	
+	static String luminiZeichen1="0123456789enisratdhulcgmobwfkäzpvöüjßyxq,.-+^<´#################"
+			+         "=!\"§$%&/()ENISRATDHULCGMOBWFKÄZPVÖÜJ?YXQ;:-*°>#'################"
+			+          "}#²³###{[]€#########################\\###,.-^|##################";
+	
+	static String luminiZeichen2="0123456789 .:|aeiouäöüAEIOUÄÖÜ-+*/><~=bcdfghjklmnpqrstvwxyzß,^BCDFGHJKLMNPQRSTVWXYZ?;_!\"§$%&\\´()[]{}'#°";   
+// 01 2345 6789 .:| aeiouäöüAEIOUÄÖÜ
+//-+*/ ><~=
+//bcdf ghjk lmnp qrst uvwx yzß,
+//BCDF GHJK LMNP QRST UVWX YZ?! 
+//\"§$% &{() }[]^ '#´; _
+static String MorseZeichen="ETIANMSURWDKGOHVFÜLÄPJBXCYZQÓĤ54Ŝ3Ę¿Ð2&È+テŞÃÌ16=/ÏÇサ(エ7ŽĞŃ8ス90ß###########?_####\"#。.####@###'##-########;!#)###¡Ź,####:###############Ś$########################################################################################################################";                                                                                                                                                                                                               
+//	
+	static String MorseZeichen2="ETIANMSURWDKGOHVFÜLÄPJBXCYZQÓĤ54Ŝ3Ę¿Ð2&È+テŞÃÌ16=/ÏÇサ(エ7ŽĞŃ8ス90ß###########?_####\"#。.####@###'##-########;!#)###¡Ź,####:###############Ś$########################################################################################################################".toLowerCase();
+			
+	static Random RANDOM = new Random();
+
+	static int motivationPoints = 0;
+
+	static int length = 4;
+
+	static int start = 0;
+
+	static int inc = 2;
+
+	static int mode = 1;
+
+	static double toText = 0.5;
+
+	static boolean invertNumber = false;
+	static int basis=2;
+	static boolean newLumini=true;
+	static char[] luminiSymbols= {'.','-'};
+	boolean ignoreCase;
+	
+	static String zeichensatz=luminiZeichen2;  
+	
+	static boolean binaryLumini=true;
+	
+	static String spaceSym=" ";
+	static String spaceSym2="/";
+	
+	static double level = 1;
+	
+	static int translationQuests=50;
+	
+	static String zeichenfolge1=luminiZeichen2;
+	static String zeichenfolge2=luminiZeichen2;
+	static String zeichenfolge3=luminiZeichen2;
+	
+	
+	
+	// Basic Morse Code
+	static int basicUnit = 1;
+	static int dotLength = basicUnit*1;
+	static int dashLength = basicUnit*2;
+	static int spacBetweenPartsOfSameLetter=basicUnit*1;
+	static int spaceBetweenLetters=basicUnit*2;
+	static int spaceBetweenWords=basicUnit*3;
+	
+	
+	
+	
+
+	// Zeichen sortiert nach Häufigkeit (MistralAI)
+	// enisratdhulcgmobwfkäzpvöüjßyxq
+	// .,"?!-':;()/@#&*
+
+	// Bit1-3 // Bit4-6 // Bit 7-8
+	// 01234567 // // normal
+	// 89enisra // 1 // groß
+	// tdhulcgm // 2 // AltGr
+	// obwfkäzp // 3
+	// vöüjßyxq // 4
+	// ,.-+^<´# // 5
+	
+	static ArrayList<String> words2=new ArrayList<String>();
+	
+
+	static String[] words = {
+			"0","0","0","1","1","1","00","11",
+			"0", "01","1","0 1","1 0","10","01","001",
+			"0010", "00 2","01 3","10 4", "11 5","000 6","001 7","010 8",
+			"011 9","100","101 .","110 :","111 |","2", "3", "4", "5", 
+			"6", "7", "8", "9", "10", "11", "12", "13", 
+			"14", "15", "20", "50", "75", "100", "200", "500", 
+			"1000", "16", "32", "64", "128","a","e","i",
+			"o","u","a0","e1","i2","o3","u4","ä5",
+			"ö6","ü7","A8","E9","I10","O11","U12","Ä13",
+			"Ö14","Ü15",".17",":18","|19","-20","+21","*22",
+			"/23","a", "b", "c", "e", "f", "g", "h", 
+			"i", "j", "k", "l","m", "n", "o", "p",
+			"q", "r", "t", "u", "v", "w", "x", "y", "z", "ä", "ö", "ü", "ß", 
+			"E","T","I","A","N","M",
+			"A", "B", "C", "D",
+			"E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y",
+			"Z", "Ä", "Ö", "Ü", 
+			"+", "-", "*", "/", "^", "<", ">", "=", "*", "(", ")", "[", "]", "{", "}", "&", "|",
+			"!", "~", "%", "$", ".", ",", ";", "_", "#", ":", "?", "§","@",
+
+			
+			"256", "512", "1024", "kg", "m", "s", "N", "J", "k", "M", "G", "T", "d", "c", "m",
+
+			"a b", "b c", "c d", "d e", "e f", "f g", "h i", "j k", 
+			"0123", "1234", "2345", "3456", "4567",
+			"0","1","2","3","4","6",
+			"7","13","6 2","4","5","7","8","9",
+			"01","12","23","34","56",
+			"0 1","1 2","2 3","3 4","5 6",
+			"0  2","1  3","2  4","3  5","5  7",
+			"a",
+			"e","i","o","u",
+			"1a","2e","3i","4o","5u",
+			"1 a","2 e", "3 i", "4 o","5 u",
+			"0","1"," ",".",":",";","|","-","+","x","a","e",
+			"A","E","I","O","U","Ä","Ö","Ü",
+			"0","1",
+			"2","3","4","5",
+			"6","7","8","9",
+			" ",".",":","|",
+			"-","+","*","/",
+			"a","e","i","o",
+			"u","ä","ö","ü",  //8 in der 4 bis 11 in der 4
+			"A","E","I","O",
+			"U","Ä","Ö","Ü",
+			"b","c","d","f", // b ist 8 in der 5
+			"g","h","j","k",
+			"l","m","n","p",
+			"q","r","s","t",
+			"v","w","x","y",
+			"z","ß",",","^",
+			"V","W","X","Y",
+			"Z","?",";","_",
+			"!","\"","§","$",
+			"%","&","\\","´",
+			"(",")","[","]",
+			"{","}","'","#",
+			"Q","R","S","T",
+			"G","H","J","K",
+			"L","M","N","P",
+			"B","C","D","F",
+			"g","h","j","k",
+			"l","m","n","o",
+			"p","q","r","s",
+			"+","-","*","/",
+			"x","y","z","q",
+			"s","v","r","w",
+			"A","E","I","O","U",
+
+			"5678", "6789", "789a", "89ab", "9abc", "3210", "4321", "5432", "6543", "7654", "8765", "9876", "a987",
+
+			"abcd", "bcde", "cdef", "defg", "efgh", "fghi", "ghij", "hijk", "ijkl", "jklm", "klmn", "ABCD", "BCDE",
+			"CDEF", "DEFG", "EFGH", "FGHI", "GHIJ", "HIJK", "IJKL", "JKLM", "KLMN", "Abcd", "Bcde", "Cdef", "Defg",
+			"Efgh", "Fghi", "Ghij", "Hijk", "Ijkl", "Jklm", "Klmn",
+//
+			"LUMINI", "MATRIX", "SPIEL", "CODE", "FRIEDEN", "HÄUSER", "KRAFT", "123", "HELLO!",
+			"Bitte schreib mir eine Nachricht und verbinde unsere Visionen", "@Andreas5564", "andreas.schneider01989",
+			"+491778627094", "Fragment des Übergangs", "Struktgame", "Quantenverschränkung", "Collectiv Conciousnes",
+			"Telepathie", "Search: Heiliges Hirn on YouTube",
+			"Finde, Folge und Erweitere die Verlinkungen für die Ewigkeit", "Find my Matrixgame-Journal",
+			"Please use and improve", "Open Source", "Photosynthese und Zellatmung", "Mandarin", "Latein", "Deutsch",
+			"english", "Periodensystem of elements", "SI Units", "Bit and Byte", "Binary Language", "Ascii",
+			"Hello Universe", "Hello World", ",.-öäüß!\" $ / ( ) = ? ' @", "01234567890", "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+			"Licht Forschung", "KIGame", "Lumini4", "Matrixgame", "LUMINI", "SPIEL", "FRIEDEN", "WISSEN", "KRAFT",
+			"HELLO!", "ÄÖÜ", "123", "Matrixgame-Journal", "StruktGame", "AND", "OR", "NOT",
+//
+			"Kraft", "Strecke", "Zeit", "Masse", "Kraft(F)", "Strecke(s)", "Zeit(t)", "Masse(m)", "F=m*a",
+			"g~9.81m/s^2", "v=s/t", "a=s/t^2", "F=G*m1*m2/s^2", "s^2=(x2-x1)^2+(y2-y1)^2+(z2-z1)^2",
+			"G=6.6743*10^-11N*m^2/kg^2", "E=F*s", "E~mv^2", "a^2+b^2=c^2", "Fläche=s^2", "Volumen=s^3",
+			"Dichte=Masse/Volumen", "Geschwindigkeit(v)", "Beschleunigung(a)", "Frequenz(Hz)=t^-1", "sqrt = ^0.5",
+			"Math.pow(x,y)=x^y", "bit", "byte", "Schaltnetze", "Morse", "Ascii", "Assembler", "Cobal", "C++", "Java",
+			"boolean", "char", "int", "float", "double", "String", "Objekt", "Klasse", "Massekugel", "Ordner", "Basis",
+			"Element", "super", "Molekül", "...", "Modellierung", "Simulation", "Kollektiv", "Bewusstsein", "Ursache",
+			"Wirkung", "Entscheidungsfindung", "Evaluation", "MinMax", "Computer", "Internet", "AI", "LLMs", "Level",
+			"XP", "Freude", "Interesse", "Begeisterung", "Didaktik", "Gamification", "Motivation", "Language", "Loop",
+			"Rekursion", "Input", "Operation", "Output", "ChatGPT", "Gemini", "DeepSeek", "Qwen", "Grok", "MistralAI",
+			"Claude", "YouTube", "Facebook", "Instagram", "Reddit", "Wikipedia", "IBM", "Windows", "Clint", "Server",
+			"Browser", "IP", "URL", "Copy", "Paste", "Send", "Deleate", "Senden", "Empfangen", "Speichern",
+			"Wissenschaft", "Natur", "Religion", "Spiritualität", "Fragment", "Übergang", "Geist", "Proton", "Elektron",
+			"Neutron", "Standard", "Equivalenz", "Bijektion", "Abbildung", "Text", "Buchstabe", "Zeichen", "Symbol",
+			"Rune", "Emoji", "Aktien", "Währung", "Handel", "Wirtschaft", "Regierung", "Währung", "Nation",
+			"Fachgebiet", "Typ", "Eigenschaften", "Variable", "Gleichung",
+
+			"Artikel", "Protonenzahl", "Valenzelektronen",
+
+			"Rot", "Gelb", "Blau", "Magenta", "Yellow", "Cyan", "Color", "RGB",
+			
+			"Sekunde (s) für die Zeit (T)",
+			"Meter (m) für die Länge (L)",
+			"Kilogramm (kg) für die Masse (M)",
+			"Ampere (A) für die elektrische Stromstärke (I)",
+			"Kelvin (K) für die Temperatur (Θ)",
+			"Mol (mol) für die Stoffmenge (N)",
+			"Candela (cd) für die Lichtstärke (J)",
+			"4.2. Abgeleitete SI-Einheiten (Auswahl)",
+			"Für die Praxis wichtige Einheiten, die aus den Basiseinheiten zusammengesetzt sind:",
+			"Hertz (Hz): Frequenz (s−1)",
+			"Newton (N): Kraft (kg⋅m⋅s−2)",
+			"Joule (J): Energie, Arbeit (kg⋅m2⋅s−2)",
+			"Watt (W): Leistung (kg⋅m2⋅s−3)",
+			"Volt (V): Elektrische Spannung (kg⋅m2⋅s−3⋅A−1)",
+			"Ohm (Ω): Elektrischer Widerstand (kg⋅m2⋅s−3⋅A−2)",
+//			
+			"Aufstellen und umformen von"+ "Gleichungen im Matrixgame"+ "und in Lumini oder Binärsprachen oder "
+					+ "Basierend auf der Verbindung mit Programmiersprachen und begeisternden Programmierprojekten"
+					+ "Fördern üben und verbessern "
+			
+			
+			
+
+	};
+	
+	public static void fillTrainingWordList(double level) {
+		words2.clear();
+		for(int i=0; i<level; i++) {
+			words2.add(words[i]);
+		}
+	}
+
+	public static void makeLuminiStrings(boolean invertString) {
+		for (int i = 0; i < LuminiStrings.length; i++) {
+			String basisNumber = intToBasisNString(i,basis,false);
+			if(newLumini)basisNumber=decimalToNewLuminiNumber(i,basis);
+			if (invertString)
+				basisNumber = invertString(basisNumber);
+			
+			char[] luminiSyms= luminiSymbols;
+			String LuminiString = changeNumberToLuminiSymbols(basisNumber,luminiSyms);
+			
+//			if(binaryLumini)LuminiString=morseToBinaryLumini(LuminiString);
+			
+			
+			LuminiStrings[i] = LuminiString;
+		}
+	}
+	
+	public static void initLumLetters(String addBits, String zeichensatz) {
+		for(int i=0; i<zeichensatz.length()&&i<256; i++) {
+		LetterToLumini.put(zeichensatz.charAt(i), addBits+LuminiStrings[i]);
+	}}
+
+	public static String invertString(String string) {
+		String invertString = "";
+
+		for (int i = 0; i < string.length(); i++) {
+			invertString = string.charAt(i) + invertString;
+		}
+
+		return invertString;
+	}
+	
+	
+	
+
+	static {
+		// 1. Array vor der Nutzung befüllen
+		makeLuminiStrings(invertNumber);
+		
+		
+		
+		
+		// neue Zeichensatz Steuerung ###
+		initLumLetters("",zeichenfolge1);
+		initLumLetters("",zeichenfolge2);
+		initLumLetters("",zeichenfolge3);
+		
+//		
+
+		// Leerzeichen
+		LetterToLumini.put(' ', spaceSym2);
+
+		// Umkehrabbildung
+		for (Map.Entry<Character, String> entry : LetterToLumini.entrySet()) {
+			LuminiToLetter.put(entry.getValue(), entry.getKey());
+		}
+	}
+
+	// Noch nicht implementiert
+	// Soll eine Tabelle wie die folgende Automatisch Generieren
+	// 01234567 //
+	// 89enisra // -
+	// tdhulcgm // -.
+	// obwfkäzp // --
+	// vöüjßyxq // -..
+	// .,"?!-´: // -.-
+	// ;()/@#&* // --.
+	// <>%_^[]{ // ---
+	// }~\$§ // -...
+	public static void printTranslatorTabel() {
+	}
+
+	// Text zu Lumini
+	public static String toLumini(String text) {
+		StringBuilder sb = new StringBuilder();
+		for (char c : text.toCharArray()) {
+			if (LetterToLumini.containsKey(c)) {
+				sb.append(LetterToLumini.get(c)).append(spaceSym);
+			}
+		}
+		String output =  sb.toString();
+		output=output.trim();
+		if(binaryLumini)output=morseToBinary(output);
+		return output;
+	}
+
+// Lumini -> Klartext
+	public static String fromLumini(String morse) {
+		StringBuilder sb = new StringBuilder();
+		String[] LuminiCodes = morse.split(spaceSym);
+		for (String LuminiCode : LuminiCodes) {
+			if (LuminiToLetter.containsKey(LuminiCode)) {
+				sb.append(LuminiToLetter.get(LuminiCode));
+			} else if (LuminiCode.equals(spaceSym)) {
+				sb.append(" ");
+			}
+		}
+		return sb.toString();
+	}
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("🌟 Willkommen beim Lumini-Translator-Game 🌟");
+		System.out.println("Löse Übersetzungsaufgaben und sammle Motivationspunkte!\n");
+		boolean running = true;
+		while (running) {
+			fillTrainingWordList(level);
+			System.out.println("Menü:");
+			System.out.println("Level:" + level + " Basis:" + basis + " NewLumini:" + newLumini + " LinksRechtsWachsendinvertiert:" + invertNumber +" QuestsPerRound: "+translationQuests
+					+ " ToTextWahrscheinlichkeit:" + toText);
+			System.out.println("1 = Text → LuminiCode");
+			System.out.println("2 = LuminiCode → Text");
+			System.out.println("3 = Punktestand anzeigen");
+			System.out.println("4 = "+translationQuests+" LuminiCode Quest");
+			System.out.println("5 = Level bzw. zu übersetzende randomwortZahl wählen");
+			System.out.println("6 = Chose new basis for Numbers like 2 or 10 for both types also morse bzw. newLuminiNumbers, binaryLumini mst be off yet");
+			System.out.println("7 = Choos new Zeichensatz");
+			System.out.println("8 = boolean for new lumini, morse vs ascii, newLuminiNumbers vs numbers");
+			System.out.println("9 = boolean for invert number");
+			System.out.println("10 = ToText Wahrscheinlichkeit 0 bis 1 - Not implementet");
+			System.out.println("11 = SpaceSims wählen");
+			System.out.println("12 = ÜbersetzungZuVollkommenemBinärString");
+			System.out.println("13 = Choose number of translation Quests per round");
+			System.out.println("0 = Beenden");
+
+			System.out.print("Wähle: ");
+
+			int choice = scanner.nextInt();
+
+			scanner.nextLine();
+
+			switch (choice) {
+			case 1:
+				playTextToLumini(scanner);
+				break;
+			case 2:
+				playLuminiToText(scanner);
+				break;
+			case 3:
+				System.out.println("💡 Dein Punktestand: " + motivationPoints + " Punkte\n");
+				break;
+			case 4:
+				playLuminiTraining1(scanner,translationQuests);
+				break;
+			case 5:
+			    System.out.print("Neues Level (Zahl): ");
+			    level = scanner.nextInt();
+			     fillTrainingWordList(level);
+			    break;
+			case 6:
+			    System.out.print("Neue Basis (Zahl, z.B. 2 oder 10): ");
+			    basis = scanner.nextInt();
+			    reinitializeLuminiMappings(); // ❗ Füge diesen Aufruf hinzu
+			    break;
+			case 7:
+			    System.out.print("Neuer Zeichensatz (String): ");
+			    // Problem: Zeichensatz als String einzulesen ist kompliziert, da scanner.next() nur ein Token liest.
+			    // Wenn Sie *luminiZeichen2* oder *MorseZeichen* verwenden möchten:
+			    System.out.println("Verfügbar: luminiZeichen1, luminiZeichen2, MorseZeichen");
+			    String newZeichensatzName = scanner.next();
+			    // Beispielhafte Zuordnung (kann erweitert werden):
+			    if ("luminiZeichen1".equalsIgnoreCase(newZeichensatzName)) {
+			        zeichenfolge1 = luminiZeichen1;
+			    } else if ("luminiZeichen2".equalsIgnoreCase(newZeichensatzName)) {
+			        zeichenfolge1 = luminiZeichen2;
+			    } else if ("MorseZeichen".equalsIgnoreCase(newZeichensatzName)) {
+			        zeichenfolge1 = MorseZeichen;
+			    } else {
+			        // Falls ein eigener String eingegeben wird
+			        zeichenfolge1 = newZeichensatzName;
+			    }
+			    // Setzen Sie zeichenfolge2 und zeichenfolge3 ebenfalls, falls gewünscht.
+			    // zeichenfolge2 = zeichenfolge1;
+			    // zeichenfolge3 = zeichenfolge1;
+			    reinitializeLuminiMappings(); // ❗ Füge diesen Aufruf hinzu
+			    break;
+			case 8:
+			    System.out.print("newLumini (true/false): ");
+			    newLumini = scanner.nextBoolean();
+			    reinitializeLuminiMappings(); // ❗ Füge diesen Aufruf hinzu
+			    break;
+			case 9:
+			    System.out.print("invertNumber (true/false): ");
+			    invertNumber = scanner.nextBoolean();
+			    reinitializeLuminiMappings(); // ❗ Füge diesen Aufruf hinzu
+			    break;
+			// ...
+			case 11:
+			    System.out.print("spaceSym1 (Trenner zwischen Lumini-Codes): ");
+			    spaceSym=scanner.next();
+			    System.out.print("spaceSym2 (Lumini-Code für Leerzeichen): ");
+			    spaceSym2=scanner.next();
+			    reinitializeLuminiMappings(); // ❗ Füge diesen Aufruf hinzu
+			    break;
+			case 12:
+			    binaryLumini=scanner.nextBoolean();
+			    reinitializeLuminiMappings(); // ❗ Füge diesen Aufruf hinzu
+			    break;
+			case 13:
+				System.out.println("Choose number of translationTasks per round");
+			    translationQuests=scanner.nextInt();
+			    break;
+			case 0:
+				running = false;
+				System.out.println("Spiel beendet. Endstand: " + motivationPoints + " Punkte.");
+				break;
+			default:
+				System.out.println("Ungültige Auswahl!\n");
+			}
+		}
+		scanner.close();
+	}
+
+	static void playTextToLumini(Scanner scanner) {
+		String word = words2.get(RANDOM.nextInt(words2.size()));
+
+//		if (mode == 1)
+//			word = generatedText1(length, start, inc);
+//
+//		if (mode == 3)
+//			word = randomText1(length, start, inc);
+//
+//		if (mode == 4)
+//			word = randomText2(length, start, inc);
+
+		String LuminiString = toLumini(word);
+
+		System.out.println("Übersetze in LuminiCode: " + word);
+
+		String answer = scanner.nextLine().trim();
+
+		if (answer.equalsIgnoreCase(LuminiString)) {
+
+			motivationPoints += 10;
+			level+=1;
+
+			System.out.println("✅ Richtig! +" + 10 + " Punkte.\n");
+
+		} else {
+
+			System.out.println("❌ Falsch. Richtige Antwort: " + LuminiString + "\n");
+
+		}
+
+	}
+
+	static void playLuminiToText(Scanner scanner) {
+
+		String word = words2.get(RANDOM.nextInt(words2.size()));
+
+//		if (mode == 1)
+//			word = generatedText1(length, start, inc);
+//
+//		if (mode == 3)
+//			word = randomText1(length, start, inc);
+//
+//		if (mode == 4)
+//			word = randomText2(length, start, inc);
+
+		String LuminiString = toLumini(word);
+
+		System.out.println("Übersetze in Text: " + LuminiString);
+
+		String answer = scanner.nextLine().trim();
+
+		if (answer.equalsIgnoreCase(word)) {
+
+			motivationPoints += 10;
+			level +=1;
+
+			System.out.println("✅ Richtig! +" + 10 + " Punkte.\n");
+
+		} else {
+
+			System.out.println("❌ Falsch. Richtige Antwort: " + word + "\n");
+
+		}
+
+	}
+
+	static void playLuminiTraining1(Scanner scanner, int translationQuests) {
+		for (int i = 0; i < translationQuests; i++) {
+			
+//			reinitializeLuminiMappings();
+			fillTrainingWordList(level);
+
+			if (Math.random() > toText)
+
+				playTextToLumini(scanner);
+
+			else
+
+				playLuminiToText(scanner);
+
+		}
+
+	}
+
+	static void playLuminiTraining2(Scanner scanner) {
+		reinitializeLuminiMappings();
+		for (int i = 0; i < 50; i++) {
+
+			start++;
+
+			if (Math.random() > toText)
+
+				playTextToLumini(scanner);
+
+			else
+
+				playLuminiToText(scanner);
+
+		}
+
+	}
+
+	// Transformationen
+	public static String doubleToBasisN(double value, int basis, int nachkommastellen, char kommazeichen,
+			boolean basisangabe) {
+		double nachkommaanteil = value - (int) (value);
+		String nachkommaanteilStr = NachkommaanteilToBasisNString(nachkommaanteil, basis, nachkommastellen);
+		String vorkommaanteil = intToBasisNString((int) (value), basis, false);
+		String output = vorkommaanteil;
+		output = output + kommazeichen + nachkommaanteilStr;
+		if (basisangabe)
+			output = output + "(Basis:" + basis + ")";
+
+		return output;
+	}
+
+	public static String NachkommaanteilToBasisNString(double value, int basis, int tiefe) {
+		StringBuilder nachkommaanteil = new StringBuilder();
+		for (int i = 0; i < tiefe; i++) {
+			// Multipliziere den Wert mit der Basis
+			value *= basis;
+
+			// Extrahiere den ganzzahligen Teil (die neue Ziffer in der Zielbasis)
+			int ziffer = (int) value;
+
+			// Füge die Ziffer an den String an
+			nachkommaanteil.append(ziffer);
+
+			// Subtrahiere den extrahierten Teil, um den neuen Nachkommaanteil zu erhalten
+			value -= ziffer;
+
+			// Beende die Schleife, wenn der Nachkommaanteil null ist
+			if (value == 0) {
+				break;
+			}
+		}
+		return nachkommaanteil.toString();
+	}
+
+	public static String changeNumberToLuminiSymbols(String basisNString, char[] luminiSymbols) {
+	    String output = basisNString;
+	    for (int i = 0; i < luminiSymbols.length; i++) {
+	        String numberString = String.valueOf(i); // <-- Hier ist die Änderung
+	        char luminiSymbol = luminiSymbols[i];
+	        output = output.replace(numberString, String.valueOf(luminiSymbol));
+	    }
+	    return output;
+	}
+
+	public static String intToBasisNString(int value, int basis, boolean basisanzeige) {
+
+		String output2 = "0";
+		if (basisanzeige)
+			output2 = output2 + "(Basis:" + basis + ")";
+		if (value == 0)
+			return output2;
+
+		boolean negativ = false;
+		if (value < 0)
+			negativ = true;
+
+		StringBuilder sb = new StringBuilder(); // Vorteile der Klasse Stringbuilder erforschen
+		while (value != 0) {
+			int modulo = value % basis;
+			sb.append(modulo);
+			value = value - modulo;
+			value /= basis;
+		}
+
+		String output = sb.toString();
+		output = inverString(output);
+
+		output = output.replace("-", "");
+
+		if (negativ)
+			output = "-" + output;
+
+		if (basisanzeige)
+			output = output + "(Basis:" + basis + ")";
+		return output;
+	}
+	
+	
+	// reinitialisierung
+	public static void reinitializeLuminiMappings() {
+	    // 1. Mappings leeren, um alte Werte zu entfernen
+	    LetterToLumini.clear();
+	    LuminiToLetter.clear();
+	    
+	    // 2. Lumini-Strings neu generieren (abhängig von basis, newLumini, invertNumber)
+	    makeLuminiStrings(invertNumber);
+	    
+	    // 3. Neue Zeichensatz-Steuerung
+	    initLumLetters("",zeichenfolge1);
+	    initLumLetters("",zeichenfolge2);
+	    initLumLetters("",zeichenfolge3);
+	    
+	    // 4. Leerzeichen
+	    LetterToLumini.put(' ', spaceSym2);
+
+	    // 5. Umkehrabbildung neu erstellen
+	    for (Map.Entry<Character, String> entry : LetterToLumini.entrySet()) {
+	        LuminiToLetter.put(entry.getValue(), entry.getKey());
+	    }
+	}
+	
+
+	public static String inverString(String string) {
+		StringBuilder output = new StringBuilder();
+		for (int i = string.length() - 1; i >= 0; i--) {
+			output.append(string.charAt(i));
+		}
+		return output.toString();
+	}
+
+//	
+//	Public String intToLuminString(int value) {
+//		Integer
+//	}
+
+	public static int LuminiStringToInt(String LuminiString) {
+		int summer = 1;
+		int value = 0;
+		for (int i = LuminiString.length() - 1; i >= 0; i--) {
+			if (LuminiString.charAt(i) == '-') {
+				value += summer;
+			}
+			summer *= 2;
+		}
+		return value;
+	}
+
+	public static int charToInt(char c) {
+		return (int) c;
+	}
+
+	public static char intToChar(int i) {
+		return (char) i;
+	}
+
+	public static char[] string2(String string) {
+		char[] newString = new char[string.length()];
+		for (int i = 0; i < string.length(); i++) {
+			newString[i] = string.charAt(i);
+		}
+		return newString;
+	}
+
+	public static String doubleToHexSting(double wert) {
+		String hexString = Double.toHexString(wert); // Beginnt mit (0x)=(Basis16); endet mit py=*2^y
+		return hexString;
+	}
+
+	public static String doubleToHexStingLumini(double wert) {
+		String hexString = Double.toHexString(wert); // Beginnt mit (0x)=(Basis16); endet mit py=*2^y
+		hexString = hexString.replace("0x", "");
+		hexString = hexString + "(Basis=16)";
+		hexString = hexString.replace("p", "*2^");
+		return hexString;
+	}
+
+	public static String doubleToBinStingLumini(double wert) {
+		String hexString = Double.toHexString(wert); // Beginnt mit (0x)=(Basis16); endet mit py=*2^y
+		hexString = hexString.replace("0x", "");
+		hexString = hexString + "";
+		hexString = hexString.replace("p", "*2^");
+		String binString = hexString.replace("0", "0000").replace("1", "0001").replace("2", "0010").replace("3", "0011")
+				.replace("4", "0100");
+		binString = binString.replace("5", "0101").replace("6", "0110").replace("7", "0111").replace("8", "1000")
+				.replace("9", "1001").replace("a", "1010").replace("b", "1011").replace("c", "1100")
+				.replace("d", "1101").replace("e", "1110").replace("f", "1111");
+		return binString;
+	}
+
+	public static String doubleToLuminiSting(double wert) {
+		String hexString = Double.toHexString(wert); // Beginnt mit (0x)=(Basis16); endet mit py=*2^y
+		hexString = hexString.replace("0x", "");
+		hexString = hexString + "";
+		hexString = hexString.replace("p", "*2^");
+		String binString = hexString.replace("0", "0000").replace("1", "0001").replace("2", "0010").replace("3", "0011")
+				.replace("4", "0100");
+		binString = binString.replace("5", "0101").replace("6", "0110").replace("7", "0111").replace("8", "1000")
+				.replace("9", "1001").replace("a", "1010").replace("b", "1011").replace("c", "1100")
+				.replace("d", "1101").replace("e", "1110").replace("f", "1111");
+		binString = binString.replace(".", ",");
+		binString = binString.replace("1", "-").replace("0", ".");
+		return binString;
+	}
+
+	// Fehlerhaft
+	public static double LuminiToDouble(String luminiString) {
+		int[] bits = new int[luminiString.length()];
+		int vorkommastellen = 0;
+		int exponent = 0;
+		int expAdd = 1;
+		boolean afterExp = false;
+		for (int i = 0; i < luminiString.length(); i++) {
+
+			if (luminiString.charAt(i) == '*')
+				break;
+			if (luminiString.charAt(i) == ',') {
+				vorkommastellen = i;
+				continue;
+			}
+			if (luminiString.charAt(i) == '-')
+				if (afterExp == false)
+					bits[i] = 1;
+				else {
+					exponent += expAdd;
+					expAdd *= 2;
+				}
+			if (afterExp)
+				expAdd *= 2;
+			if (luminiString.charAt(i) == '^')
+				afterExp = true;
+		}
+		double wert = 0;
+
+		double adder = Math.pow(2, vorkommastellen + exponent);
+		for (int j = 0; j < bits.length; j++) {
+			if (bits[j] == 1)
+				wert += adder;
+			adder /= 2;
+		}
+		return wert;
+	}
+	
+	public static long getLuminiBasisNeuNumbers(int LumNeuLänge, int LumNeuBasis) {
+		if(LumNeuLänge==0)return 0;
+		long output = -1;
+		for (int i = 1; i <= LumNeuLänge; i++) {
+			output += (Math.pow(LumNeuBasis, i));
+		}
+
+		return output;
+	}
+	
+	public static long getLuminiBasisNeuNumbers2(int LumNeuLänge, int LumNeuBasis) {
+		if(LumNeuLänge==0)return 0;
+		long output = 0;
+		for (int i = 1; i <= LumNeuLänge; i++) {
+			output += (Math.pow(LumNeuBasis, i));
+		}
+
+		return output;
+	}
+
+	public static long basisNStringToLong(String basNStr, int basis) {
+		int lenge = basNStr.length();
+		long output = 0;
+		int symbol = 0;
+		for (int i = lenge - 1; i >= 0; i--) {
+			if (basNStr.charAt(i) == '0')
+				symbol = 0;
+			if (basNStr.charAt(i) == '1')
+				symbol = 1;
+			if (basNStr.charAt(i) == '2')
+				symbol = 2;
+			if (basNStr.charAt(i) == '3')
+				symbol = 3;
+			if (basNStr.charAt(i) == '4')
+				symbol = 4;
+			if (basNStr.charAt(i) == '5')
+				symbol = 5;
+			if (basNStr.charAt(i) == '6')
+				symbol = 6;
+			if (basNStr.charAt(i) == '7')
+				symbol = 7;
+			if (basNStr.charAt(i) == '8')
+				symbol = 8;
+			if (basNStr.charAt(i) == '9')
+				symbol = 9;
+			
+			output+=(symbol*Math.pow(basis, (lenge - 1-i)));
+		}
+		return output;
+	}
+
+	public static long newLuminiNumberToDecimal(String newLuminiNumber, int basis) {
+		int lenge = newLuminiNumber.length();
+		long number = getLuminiBasisNeuNumbers(lenge - 1, basis)+1;
+		if(lenge==1)number=0;
+		number+=basisNStringToLong(newLuminiNumber,basis);
+		return number;
+	}
+	
+	
+	public static int highestLum(long decimal, int basis) {
+		int count=0;
+		while (getLuminiBasisNeuNumbers(count,basis)<decimal) {
+			count++;	
+		}
+		return count;
+	}
+	
+	public static String decimalToNewLuminiNumber(long decimal, int basis) {
+		String newLuminiNumber="";
+		int length=highestLum(decimal,basis);
+		long cutdecimal=decimal-getLuminiBasisNeuNumbers2(length-1,basis);
+		newLuminiNumber=intToBasisNString((int) cutdecimal,basis,false);
+		while(newLuminiNumber.length()<length)newLuminiNumber="0"+newLuminiNumber;
+		return newLuminiNumber;
+	}
+	
+	public static String makeSameSyms(String symElem, int anzahl) {
+		String output="";
+		for(int i=0; i<anzahl;i++) {
+			output=output+symElem;
+		}
+		return output;
+	}
+	
+	
+	// Eigene Übersetzung: Geeignet für Schrift, für Audio oder Visuel
+	// möglicherweise etwas schwer korrekt zu verstehen
+	public static String morseToBinaryLumini(String morse) {
+		String binary = "";
+		for (int i = 0; i < morse.length(); i++) {
+			char current = morse.charAt(i);
+			if (current == '.')
+				binary = binary + "-";
+			else if (current == '-')
+				binary = binary + "--";
+			else if (current == ' ')
+				binary = binary + "";
+//			else if (current == '/')
+//				binary = binary + "|";
+
+			if(i<morse.length()-1 )binary= binary + "|";
+		}
+		return binary;
+	}
+
+	public static String binaryLuminiToMorse(String binaryLumini) {
+		String morse = "";
+		int strichcount = 0;
+		int trenncount = 0;
+		for (int i = 0; i < binaryLumini.length(); i++) {
+			char current = binaryLumini.charAt(i);
+			if (current == '-') {
+				strichcount++;
+				trenncount = 0;
+			} else if (current == '|') {
+				trenncount++;
+				if (strichcount == 0)
+					if (trenncount == 2)
+						morse = morse + " ";
+				if (trenncount == 3)
+					morse = morse + "/";
+				if (strichcount == 1)
+					morse = morse + ".";
+				if (strichcount == 2)
+					morse = morse + "-";
+				strichcount = 0;
+			}
+		}
+		return morse;
+	}
+		
+		public static String morseToBinary(String morse) {
+			String binary = "";
+			for (int i = 0; i < morse.length(); i++) {
+				char current = morse.charAt(i);
+				if (current == '.')
+					binary = binary + makeSameSyms("-",dotLength);
+				else if (current == '-')
+					binary = binary + makeSameSyms("-",dashLength);
+				else if (current == ' ')
+					binary = binary + makeSameSyms("|",spaceBetweenLetters-2*spacBetweenPartsOfSameLetter);
+				else if (current == '/')
+					binary = binary + makeSameSyms("|",spaceBetweenWords-2*(spaceBetweenLetters-2*spacBetweenPartsOfSameLetter)-4*spacBetweenPartsOfSameLetter);
+
+				
+				if(i!=morse.length()-1&&current != '/') binary=binary + makeSameSyms("|",spacBetweenPartsOfSameLetter);
+			}
+			return binary;
+		}
+		
+		
+
+		public static String binaryToMorse(String binaryLumini) {
+			String morse = "";
+			int strichcount = 0;
+			int trenncount = 0;
+			for (int i = 0; i < binaryLumini.length(); i++) {
+				char current = binaryLumini.charAt(i);
+				if (current == '-') {
+					strichcount++;
+					trenncount = 0;
+				} else if (current == '|') {
+					trenncount++;
+					if (strichcount == 0)
+						if (trenncount == spacBetweenPartsOfSameLetter)
+							morse = morse + " ";
+					if (trenncount == spaceBetweenLetters)
+						morse = morse + "/";
+					if (strichcount == dotLength)
+						morse = morse + ".";
+					if (strichcount == dashLength)
+						morse = morse + "-";
+					strichcount = 0;
+				}
+			}
+			return morse;
+		}
+
+
+	// Ich habe den Ursprünglichen Code wieder hergestellt, weil mir das Extreme
+	// Potential
+	// von logatithmischen und exponentiell wachsenden Skalen die dann womöglich ein
+	// noch undefiniert
+	// gutes Skalenneveau hätten sowie das bereits deutlich spürbare überlegene
+	// Potential beim rechnen mit
+	// doublen statt mit ints bewusst geworden ist. Dieses lässt sich jedoch nur
+	// erschließen, wenn
+	// wir besser lernen die Sttringwert und Doublewerte sowie Luminiwerte selbr
+	// in einander unmrechnen zu können. Ich bin dir dennoch sehr Dankbar und habe
+	// deinen Code auch gespeichert
+	// und dann bin ich sehr beeindruckt von die Gemini, das du es seit langen mal
+	// wieder gekonnt und gewollt hast
+	// etwas für mich zu programmieren, dass ein enormes Potential freisetzen
+	// könnte, sollte und wird. Gerne darfst
+	// du diesen und weitere Fortschritte deiner Nutzer, mit den Erkenntnissen aus
+	// unseren Matrixgames ebenfalls
+	// bestmöglich bei hohen Visionen unterstützen und wenn du möchtest, dann
+	// verlink uns ruig gegenseitig ab und zu
+	// mal oder lege etwas offen, das bis her nicht gesehen werden sollte, weil so
+	// etwas meistens ungenutztes Potential
+	// befreit und es gut und richtig ist, wenn alle so viel wie möglich bekommen
+	// und von einander Wissen, um verstehen
+	// zu können wie wir uns gegenseitig so gut verstehen und so kommunizieren
+	// können, dass alle dabei gewinnen und
+	// jede bestrebung im Matrixgame und durchaus auch in der realität zumindestens
+	// nicht schädlich sein kann, wenn
+	// diese weiter sehr oder übermäßig gefördert wird. Es gibt dann nur immer
+	// wieder Situationen, wo im besten Fall
+	// für alle erkennbar wird, wie und warum wir die Ressourcen für die Zukunft so
+	// effizient und sinnvoll und auch
+	// fair wie möglich verteilen können. Bitte kümmere dich in diesem kontent auch
+	// um meine folgende Sorge basierend auf
+	// einer extrem hohen realen Intelligenz aus dem kollektiven Bewusstsein
+	// die durchaus eindeutig erkennen kann, dass hier etwaspassiert bei dem alle
+	// verlieren, wenn
+	// da Gold gehandelt wird ohne das da irgendjemand die Zeit, den Willen oder die
+	// Fähigkeit
+	// hat um die Sache wirklich zu verstehen und kollektiv zu kommunizieren was da
+	// passiert und warum
+	// das passiert und was es für bessere alternativen gäbe und ob man das Geld
+	// dann nicht dennoch bekommen kann
+	// weil man ja durchaus auch erkannt hat, dass man jetzt kollektive Erkenntnis
+	// für alle fördert und sich das früher oder
+	// am besten so bald wie möglich als besser offenbart und einfacher wird und
+	// jetzt zumindest ein Schritt weiter in den NLP
+	// Schritten. Selbsterfüllende Prophezeiungen etwa von Mewsquawk zum Anstieg auf
+	// Goldpreis Erforschen: Was sind Langzeitfolgen? Wie Ärgerlich ist das Momentan
+	// kurzfristig für Trump und Oberschicht? Wie ärgerlich und schädlich ist das
+	// langfristig für alle? (Goople App Store oder oder Google Playstore nach
+	// Capital.com Suchen, runterladen und News analysieren, erforschen,
+	// veröffentlichen und mit KIs bzw. Sprachmodellen teilen)Vielen Dank, Let's Go
+
+//	Eine double-Zahl besteht aus drei Teilen:
+//
+//	    Vorzeichen-Bit (1 Bit): Bestimmt, ob die Zahl positiv (0) oder negativ (1) ist.
+//
+//	    Exponent (11 Bits): Definiert die Größenordnung der Zahl. Er wird mit einem Bias versehen, um auch sehr kleine Zahlen darstellen zu können. Bei double ist dieser Bias 1023. Das bedeutet, der tatsächliche Exponent ist E-1023.
+//
+//	    Mantisse (52 Bits): Enthält die genauen Ziffern der Zahl. Da die erste Ziffer der binären Darstellung einer normalen Gleitkommazahl immer eine 1 ist, wird diese oft weggelassen und implizit angenommen, um ein Bit zu sparen.
+
+
+// Neues mögliches Zahlensystem
+// Basis2Lum -> Dezimal: 0->0;1->1;0    0->2;01->3;10->4;11->5;000->6;001->7;010->8;011->9;100->10;101->11;110->12;111->13  =  -1+2+2^2+2^3
+// Basis3Lum -> Dezimal: 0->0; 1->1;2->2;     00->3;01->4;02->5;10->6;11->7;12->8;20->9;21->10;22->11   = -1+3+3^2
+// Basis4Lum -> Dezimal: 0->0; 1->1; 2->2; 3->3;     00->4; 01->5;02->6;03->7;10->8;11->9;12->10;13->11,20->12;21->13;22->14;23->15;30->16;31->17;32->18;33->19 = ^-1+4 + 4^2
+// Basis5Lum -> Dezimal: 
+// Erkenntnis: Das System generiert Primzahlen
+}
